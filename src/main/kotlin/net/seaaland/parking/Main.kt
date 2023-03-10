@@ -36,7 +36,7 @@ fun main(args: Array<String>) {
 
                 println("\n-> Do you want to return the application? [y/n]")
                 if (scanner.next().equals("n"))
-                    exitProcess(0)
+                    option = 5
             }
 
             2 -> {
@@ -49,11 +49,11 @@ fun main(args: Array<String>) {
                     owner = scanner.next()
 
                     println("-> Enter vehicle type: [Car, Motorcycle]")
-                    type = Model.valueOf(scanner.next())
+                    type = Model.declare(scanner.next())
 
                     println("-> Enter the license plate:")
                     plate = scanner.next()
-                } catch (ignored: Exception) {
+                } catch (ex: Exception) {
                     println("[!] There was an error processing the vehicle...")
                 }
 
@@ -68,7 +68,7 @@ fun main(args: Array<String>) {
 
                 println("\n-> Do you want to return the application? [y/n]")
                 if (scanner.next().equals("n"))
-                    exitProcess(0)
+                    option = 5
             }
 
             3 -> {
@@ -84,7 +84,7 @@ fun main(args: Array<String>) {
 
                 println("\n-> Do you want to return the application? [y/n]")
                 if (scanner.next().equals("n"))
-                    exitProcess(0)
+                    option = 5
             }
 
             4 -> {
@@ -96,13 +96,13 @@ fun main(args: Array<String>) {
                     for (credentials in handler.getVehicles()) {
                         println("[$index] Owner: ${credentials.getOwner()} > Type: ${credentials.getType().name} > Plate: ${credentials.getPlate()}")
 
-                        index += 1;
+                        index += 1
                     }
                 }
 
                 println("\n-> Do you want to return the application? [y/n]")
                 if (scanner.next().equals("n"))
-                    exitProcess(0)
+                    option = 5
             }
 
             5 -> option = 5
